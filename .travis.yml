@@ -8,7 +8,9 @@ cache:
     - $HOME/.stack/
     - $HOME/.ghcjs/
     - $HOME/.local/bin/
-    - .stack-work/
+    - $HOME/luna/luna-studio/build/backend/.stack-work/
+    - $HOME/luna/luna-studio/luna-studio/.stack-work/
+    - $HOME/luna/luna-studio/runner/.stack-work/
 
 before_install:
 # Download and unpack the stack executable
@@ -42,10 +44,10 @@ install:
     - "pip install requests"
 
 script:
-    - stack build --stack-yaml=build/backend/stack.yaml --only-dependencies --install-ghc --test --fast -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
+    - stack build --stack-yaml=build/backend/stack.yaml --only-dependencies --install-ghc --test -j1 --ghc-options="-j1 -O2" --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
     - stack build --stack-yaml=luna-studio/stack.yaml --only-dependencies --install-ghc --fast -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
     - stack build --stack-yaml=runner/stack.yaml --only-dependencies --install-ghc --fast -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
-    - stack build --stack-yaml build/backend/stack.yaml --copy-bins --no-run-tests --no-run-benchmarks -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
+    - stack build --stack-yaml build/backend/stack.yaml --copy-bins --no-run-tests --no-run-benchmarks -j1 --ghc-options="-j1 -O2" --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
     - stack build --stack-yaml luna-studio/stack.yaml --fast -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
     - stack build --stack-yaml runner/stack.yaml --copy-bins --fast -j1 --ghc-options=-j1 --ghc-options="+RTS -M3G -RTS" +RTS -N1 -RTS
     - luna-manager make-package /home/travis/packageConfig.yaml -v
