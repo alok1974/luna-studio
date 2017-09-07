@@ -35,7 +35,7 @@ install:
     - "pip install requests"
 
 script:
-    - bash $HOME/luna/luna-studio/build_dependencies.sh
+    - bash build_dependencies.sh
     - travis_wait stack build --stack-yaml build/backend/stack.yaml --no-terminal --copy-bins --no-run-tests --no-run-benchmarks -j2 --ghc-options=-j2 --ghc-options=-O2
     - travis_wait stack build --stack-yaml luna-studio/stack.yaml --no-terminal --fast -j2 --ghc-options=-j2
     - stack build --stack-yaml runner/stack.yaml --no-terminal --copy-bins --fast -j2 --ghc-options=-j2
