@@ -36,5 +36,4 @@ install:
 
 script:
     - travis_wait 110 ./travis_build_backend.sh
-    - travis_wait 100 ./build_dependencies.sh
-    - luna-manager make-package /home/travis/packageConfig.yaml -v
+    
