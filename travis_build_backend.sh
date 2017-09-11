@@ -3,7 +3,7 @@ set -x
 
 # Install GHC and build dependencies
 cd build/backend
-timeout 110m stack build --no-terminal --only-dependencies --install-ghc --test -j2 --ghc-options="-j2 -O2 +RTS -M3G -RTS" +RTS -N1 -RTS
+timeout 45m stack build --no-terminal --only-dependencies --install-ghc --test -j2 --ghc-options="-j2 -O2 +RTS -M3G -RTS" +RTS -N1 -RTS
 ret=$?
 case "$ret" in
   0)
