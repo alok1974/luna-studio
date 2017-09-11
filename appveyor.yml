@@ -1,6 +1,6 @@
 build: off
  
-before_test:
+before_build:
 # http://help.appveyor.com/discussions/problems/6312-curl-command-not-found
 - set PATH=C:\Program Files\Git\mingw64\bin;%PATH%
 
