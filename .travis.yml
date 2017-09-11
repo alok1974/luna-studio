@@ -6,6 +6,7 @@ cache:
     - $HOME/.stack/
     - $HOME/.ghcjs/
     - $HOME/.local/bin/
+    - $HOME/.cabal
     - $HOME/luna/luna-studio/build/backend/.stack-work/
     - $HOME/luna/luna-studio/luna-studio/.stack-work/
     - $HOME/luna/luna-studio/runner/.stack-work/
