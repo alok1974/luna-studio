@@ -12,7 +12,7 @@ case "$ret" in
   124)
     echo "Timed out while installing dependencies."
     echo "Try building again by pushing a new commit."
-    exit 1
+    exit 0
     ;;
   *)
     echo "Failed to install dependencies; stack exited with $ret"
