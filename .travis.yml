@@ -35,4 +35,4 @@ install:
     - "pip install requests"
 
 script:
-    - ./travis_build_backend.sh
+    - travis_wait 110 ./travis_build_backend.sh
