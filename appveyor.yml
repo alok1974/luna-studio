@@ -13,7 +13,7 @@ before_build:
 - curl -sS -ozmq.zip -L https://s3-us-west-2.amazonaws.com/packages-luna/windows/zmq/zmq.zip
 - 7z x stack.zip stack.exe
 - 7z x zmq.zip
-- Robocopy zmq %APPDATA%\local /S
+- Robocopy zmq %APPDATA%\local /S && exit 0
 
 clone_folder: "c:\\stack"
 environment:
