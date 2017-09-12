@@ -12,7 +12,7 @@ app_dir      = scripts_build.atom_prepare.prep_path('..')
 backend_dir  = scripts_build.atom_prepare.prep_path('../build/backend')
 frontend_dir = scripts_build.atom_prepare.prep_path('../luna-studio')
 
-
+ 
 
 def build_app (backend_args, frontend_args, runner_args):
     try:
