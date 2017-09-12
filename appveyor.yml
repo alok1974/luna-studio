@@ -16,6 +16,9 @@ environment:
     STACK_ROOT: "c:\\sr"
   priv_key:
     secure: <encryped-value>
+    
+cache:
+  - C:\sr
 
 install:
   - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
