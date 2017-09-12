@@ -2,13 +2,15 @@ build: off
 
 before_build:
 # http://help.appveyor.com/discussions/problems/6312-curl-command-not-found
-- set PATH=C:\Program Files\Git\mingw64\bin;%APPDATA%\local\bin;%PATH%
+- set PATH=C:\Program Files\Git\mingw64\bin;%APPDATA%\local\bin;%APPDATA%\zmq\bin;%PATH%
+- set CPATH=%APPDATA%\zmq\include;%CPATH%
 
 - curl -sS -ostack.zip -L --insecure http://www.stackage.org/stack/windows-i386
 - curl -sS -ozmq.zip -L https://s3-us-west-2.amazonaws.com/packages-luna/windows/zmq/zmq.zip
 - 7z x stack.zip stack.exe
 - 7z x zmq.zip
-- Robocopy zmq %APPDATA%\local\bin
+- Robocopy zmq\bin %APPDATA%\zmq\bin
+- Robocopy zmq\include %APPDATA%\zmq\include
 
 clone_folder: "c:\\stack"
 environment:
