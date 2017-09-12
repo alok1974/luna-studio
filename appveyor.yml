@@ -9,7 +9,7 @@ before_build:
 - set CPATH=%APPDATA%\local\include;%CPATH%
 - set LIBRARY_PATH=%APPDATA%\local\lib
 
-- curl -sS -ostack.zip -L --insecure http://www.stackage.org/stack/windows-i386
+- curl -sS -ostack.zip -L --insecure http://www.stackage.org/stack/windows-x86_64
 - curl -sS -ozmq.zip -L https://s3-us-west-2.amazonaws.com/packages-luna/windows/zmq/zmq.zip
 - 7z x stack.zip stack.exe
 - 7z x zmq.zip
