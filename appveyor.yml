@@ -4,6 +4,7 @@ before_build:
 # http://help.appveyor.com/discussions/problems/6312-curl-command-not-found
 - set PATH=C:\Program Files\Git\mingw64\bin;%APPDATA%\local\bin;%PATH%
 - set CPATH=%APPDATA%\local\include;%CPATH%
+- set LD_LIBRARY_PATH=%APPDATA%\local\lib
 
 - curl -sS -ostack.zip -L --insecure http://www.stackage.org/stack/windows-i386
 - curl -sS -ozmq.zip -L https://s3-us-west-2.amazonaws.com/packages-luna/windows/zmq/zmq.zip
