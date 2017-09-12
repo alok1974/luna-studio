@@ -7,9 +7,10 @@ cache:
     - $HOME/.ghcjs/
     - $HOME/.local/bin/
     - $HOME/.cabal
-    - $HOME/luna/luna-studio/build/backend/.stack-work/
-    - $HOME/luna/luna-studio/luna-studio/.stack-work/
-    - $HOME/luna/luna-studio/runner/.stack-work/
+    - .stack-work
+    - build/backend/.stack-work/
+    - luna-studio/.stack-work/
+    - runner/.stack-work/
 
 before_install:
 # Download and unpack the stack executable
