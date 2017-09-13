@@ -27,7 +27,7 @@ before_install:
     - curl -o /tmp/packageConfig.yaml http://packages.luna-lang.org/linux/studio/packageConfig.yaml
     - sudo mv /tmp/packageConfig.yaml /home/travis/packageConfig.yaml
     - chmod +x /usr/bin/luna-manager
-
+ 
 
 install:
     - "npm install -g npm"
