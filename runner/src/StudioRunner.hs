@@ -266,7 +266,7 @@ runFrontend args = do
     setEnv "ATOM_HOME"             =<< packageStudioAtomHome
     setEnv "LUNA_STUDIO_DATA_PATH" =<< dataStorageDirectory True
     setEnv "LUNA_TMP"              =<< lunaTmpPath
-    setEnv "LUNA_PROJECTS"          =<< lunaProjectsPath
+    setEnv "LUNA_PROJECTS"         =<< lunaProjectsPath
     setEnv "LUNA_TUTORIALS"        =<< lunaTutorialsPath
     unixOnly $ Shelly.shelly $ Shelly.run_ atom $ "-w" : maybeToList args
 
